@@ -1,0 +1,20 @@
+1. cd ~
+2. mkdir egzamin
+3. chmod g-rwx, o-rwx egzamin       # to zabiera grupie i innym nie zmieniajac oryginalnych uprawnien, jezeli wiemy ze chcemy miec wszystkie uprawnienia jako user mozemy zrobic to szybciej chmod 007 egzamin
+4. cd egzamin
+5. touch pracownicy.csv
+6. echo "id,imie,nazwisko,stanowisko" > pracownicy.csv
+7. echo "1,Przemyslaw,Holownia,Programista" >> pracownicy.csv
+   echo "2,Jan,Kowalski,Profesor" >> pracownicy.csv
+   echo "3,Janina,Kowalska,Mechanik" >> pracownicy.csv
+   echo "4,Wojciech,Nowak,Kucharz" >> pracownicy.csv
+8. cat pracownicy.csv
+9. cp pracownicy.csv .backup.csv
+10. ls -a
+11. find /var -name "*log*"
+12. find /var -name "lib" -type d > libs.txt
+13. tail -n +2 pracownicy.csv | sort -t "," -k 2 | nl > .backup2.csv
+14. diff .backup.csv .backup2.csv
+15. sed -i "s/,/;/g" .backup.csv
+16. sed -n '/inżynier/p' pracownicy.csv 
+17. df | awk '{used+=$3;available+=$4}END { print "Used: ", used, " Available: ", available }'
