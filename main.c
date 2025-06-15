@@ -1,3 +1,11 @@
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+
+#include "manager.h"
+
 int main() {
-	return 0;
+  create_workers();
+  return 0;
 }
